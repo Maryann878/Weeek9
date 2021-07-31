@@ -3,16 +3,19 @@ import React from "react";
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Forms from './Forms'
+import RouteParam from './pages/RouteParam';
 
 import {Switch,
-  Route,
-  Link
+  Route,Link,Router,
+  NavLink
 } from "react-router-dom";
 
 
 
-function App() {
 
+function App() {
+  
 
   return (
 
@@ -25,7 +28,7 @@ function App() {
    
      <h1>Hello World</h1>
 
-     <Switch>
+     {/* <Switch>
      <Route path="/about">
        <About/>
      </Route>
@@ -35,11 +38,20 @@ function App() {
      <Route path="/">
        <Home/>
      </Route>
-     </Switch>
+     </Switch> */}
+
      
+<div className = "App">
+  <NavLink to= "/RouteParam">Product</NavLink>
+  <Route path= "/RouteParam/:id">
+    <RouteParam/>
+  </Route>
+</div>
     </div>
   )
 }
+
+
 
 
 export default App
